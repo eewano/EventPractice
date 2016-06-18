@@ -33,12 +33,12 @@ public class Cube01Controller : MonoBehaviour {
     }
 
     public void ChangeColorHandler(object o, EventArgs e) {
-        rend.material.color = new Color(255.0f / 255.0f, 0f / 255.0f, 0f / 255.0f);
+        rend.material.color = new Color32(255, 0, 0, 255);
         amplitude = 3.0f;
     }
 
     public void ResetColorHandler(object o, EventArgs e) {
-        rend.material.color = new Color(255.0f / 255.0f, 128.0f / 255.0f, 255.0f / 255.0f);
+        rend.material.color = new Color32(255, 128, 255, 255);
         amplitude = 2.0f;
     }
 }
