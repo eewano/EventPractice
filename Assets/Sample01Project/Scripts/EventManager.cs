@@ -18,6 +18,9 @@ public class EventManager : MonoBehaviour {
 
     public event EventHandler resetColor;
 
+    private const string TagScaleChange = "ScaleChange";
+    private const string TagColorChange = "ColorChange";
+
     void Awake() {
         cube01Controller = GameObject.Find("Cube01").GetComponent<Cube01Controller>();
         cube02Controller = GameObject.Find("Cube02").GetComponent<Cube02Controller>();
@@ -34,22 +37,22 @@ public class EventManager : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider col) {
-        if (col.gameObject.tag == "ScaleChange")
+        if (col.gameObject.tag == TagScaleChange)
         {
             this.changeSpeed(this, EventArgs.Empty);
         }
-        else if (col.gameObject.tag == "ColorChange")
+        else if (col.gameObject.tag == TagColorChange)
         {
             this.changeColor(this, EventArgs.Empty);
         }
     }
 
     void OnTriggerExit(Collider col) {
-        if (col.gameObject.tag == "ScaleChange")
+        if (col.gameObject.tag == TagScaleChange)
         {
             this.resetSpeed(this, EventArgs.Empty);
         }
-        else if (col.gameObject.tag == "ColorChange")
+        else if (col.gameObject.tag == TagColorChange)
         {
             this.resetColor(this, EventArgs.Empty);
         }
