@@ -7,6 +7,7 @@ public delegate void ChangeMaxMPEventHandler(object sender, int i);
 
 public class ManagerStatusMaxMP : MonoBehaviour {
 
+    [SerializeField]
     private StatusMP statusMP;
     [SerializeField]
     private int p1MaxMPChangeValue;
@@ -20,10 +21,6 @@ public class ManagerStatusMaxMP : MonoBehaviour {
     private event ChangeMaxMPEventHandler p2ChangeMaxMPEvent;
 
     private event ChangeMaxMPEventHandler p3ChangeMaxMPEvent;
-
-    void Awake() {
-        statusMP = GameObject.Find("MPValueText").GetComponent<StatusMP>();
-    }
 
     void Start() {
         p1ChangeMaxMPEvent += new ChangeMaxMPEventHandler(statusMP.P1StatusMaxMPChange);

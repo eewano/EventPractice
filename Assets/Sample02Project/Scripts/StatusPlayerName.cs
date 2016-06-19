@@ -5,10 +5,10 @@ using System;
 
 public class StatusPlayerName : MonoBehaviour {
 
+    [SerializeField]
     private Text pNameText;
 
     void Start() {
-        pNameText = GetComponent<Text>();
         pNameText.text = "";
     }
 

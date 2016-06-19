@@ -5,10 +5,10 @@ using System;
 
 public class Command04Display : MonoBehaviour {
 
+    [SerializeField]
     private GameObject command04Display;
 
     void Start() {
-        command04Display = GameObject.Find("BackGround04");
         command04Display.gameObject.SetActive(false);
     }
 

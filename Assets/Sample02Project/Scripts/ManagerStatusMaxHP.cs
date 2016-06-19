@@ -7,6 +7,7 @@ public delegate void ChangeMaxHPEventHandler(object sender, int i);
 
 public class ManagerStatusMaxHP : MonoBehaviour {
 
+    [SerializeField]
     private StatusHP statusHP;
     [SerializeField]
     private int p1MaxHPChangeValue;
@@ -20,10 +21,6 @@ public class ManagerStatusMaxHP : MonoBehaviour {
     private event ChangeMaxHPEventHandler p2ChangeMaxHPEvent;
 
     private event ChangeMaxHPEventHandler p3ChangeMaxHPEvent;
-
-    void Awake() {
-        statusHP = GameObject.Find("HPValueText").GetComponent<StatusHP>();
-    }
 
     void Start() {
         p1ChangeMaxHPEvent += new ChangeMaxHPEventHandler(statusHP.P1StatusMaxHPChange);

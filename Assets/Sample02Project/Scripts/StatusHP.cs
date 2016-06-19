@@ -5,6 +5,7 @@ using System;
 
 public class StatusHP : MonoBehaviour {
 
+    [SerializeField]
     private Text hPText;
     [SerializeField]
     private int p1MaxHP;
@@ -31,7 +32,6 @@ public class StatusHP : MonoBehaviour {
     private bool p3NowHPDisplay = false;
 
     void Start() {
-        hPText = GetComponent<Text>();
         p1NowHP = p1MaxHP;
         p2NowHP = p2MaxHP;
         p3NowHP = p3MaxHP;

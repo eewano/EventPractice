@@ -7,6 +7,7 @@ public delegate void ChangeSpeedEventHandler(object sender, int i);
 
 public class ManagerStatusSpeed : MonoBehaviour {
 
+    [SerializeField]
     private StatusSpeed statusSpeed;
     [SerializeField]
     private int p1SpeedChangeValue;
@@ -20,10 +21,6 @@ public class ManagerStatusSpeed : MonoBehaviour {
     private event ChangeSpeedEventHandler p2ChangeSpeedEvent;
 
     private event ChangeSpeedEventHandler p3ChangeSpeedEvent;
-
-    void Awake() {
-        statusSpeed = GameObject.Find("SpeedValueText").GetComponent<StatusSpeed>();
-    }
 
     void Start() {
         p1ChangeSpeedEvent += new ChangeSpeedEventHandler(statusSpeed.P1StatusSpeedChange);

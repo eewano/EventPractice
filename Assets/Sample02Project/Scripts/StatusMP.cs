@@ -5,6 +5,7 @@ using System;
 
 public class StatusMP : MonoBehaviour {
 
+    [SerializeField]
     private Text mPText;
     [SerializeField]
     private int p1MaxMP;
@@ -31,7 +32,6 @@ public class StatusMP : MonoBehaviour {
     private bool p3NowMPDisplay = false;
 
     void Start() {
-        mPText = GetComponent<Text>();
         p1NowMP = p1MaxMP;
         p2NowMP = p2MaxMP;
         p3NowMP = p3MaxMP;

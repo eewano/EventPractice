@@ -5,6 +5,7 @@ using System;
 
 public class StatusDefence : MonoBehaviour {
 
+    [SerializeField]
     private Text defenceText;
     [SerializeField]
     private int p1Defence;
@@ -18,7 +19,6 @@ public class StatusDefence : MonoBehaviour {
     private bool p3DefenceDisplay = false;
 
     void Start() {
-        defenceText = GetComponent<Text>();
         defenceText.text = "";
     }
 

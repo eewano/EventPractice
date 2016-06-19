@@ -9,13 +9,10 @@ public class ManagerDamageAll : MonoBehaviour {
 
     [SerializeField]
     private GameObject buttonDamageAll;
+    [SerializeField]
     private StatusHP statusHP;
 
     public event DamageAllEventHandler damageAllEvent;
-
-    void Awake() {
-        statusHP = GameObject.Find("HPValueText").GetComponent<StatusHP>();
-    }
 
     void Start() {
         damageAllEvent += new DamageAllEventHandler(statusHP.P1StatusHPChange);

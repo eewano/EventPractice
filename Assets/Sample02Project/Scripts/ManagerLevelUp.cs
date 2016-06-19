@@ -9,11 +9,17 @@ public class ManagerLevelUp : MonoBehaviour {
 
     [SerializeField]
     private GameObject buttonLevelUp;
+    [SerializeField]
     private StatusLevel statusLevel;
+    [SerializeField]
     private ManagerStatusPower managerStatusPower;
+    [SerializeField]
     private ManagerStatusDefence managerStatusDefence;
+    [SerializeField]
     private ManagerStatusSpeed managerStatusSpeed;
+    [SerializeField]
     private ManagerStatusMaxHP managerStatusMaxHP;
+    [SerializeField]
     private ManagerStatusMaxMP managerStatusMaxMP;
 
     public event LevelUpEventHandler p1LevelUpEvent;
@@ -21,15 +27,6 @@ public class ManagerLevelUp : MonoBehaviour {
     public event LevelUpEventHandler p2LevelUpEvent;
 
     public event LevelUpEventHandler p3LevelUpEvent;
-
-    void Awake() {
-        statusLevel = GameObject.Find("LevelValueText").GetComponent<StatusLevel>();
-        managerStatusPower = GameObject.Find("ManagerStatusAll").GetComponent<ManagerStatusPower>();
-        managerStatusDefence = GameObject.Find("ManagerStatusAll").GetComponent<ManagerStatusDefence>();
-        managerStatusSpeed = GameObject.Find("ManagerStatusAll").GetComponent<ManagerStatusSpeed>();
-        managerStatusMaxHP = GameObject.Find("ManagerStatusAll").GetComponent<ManagerStatusMaxHP>();
-        managerStatusMaxMP = GameObject.Find("ManagerStatusAll").GetComponent<ManagerStatusMaxMP>();
-    }
 
     void Start() {
         p1LevelUpEvent += new LevelUpEventHandler(statusLevel.P1LevelUp);

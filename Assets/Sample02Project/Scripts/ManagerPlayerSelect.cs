@@ -14,14 +14,23 @@ public class ManagerPlayerSelect : MonoBehaviour {
     [SerializeField]
     private GameObject buttonP3;
 
+    [SerializeField]
     private StatusPower statusPower;
+    [SerializeField]
     private StatusDefence statusDefence;
+    [SerializeField]
     private StatusSpeed statusSpeed;
+    [SerializeField]
     private StatusHP statusHP;
+    [SerializeField]
     private StatusMP statusMP;
+    [SerializeField]
     private StatusLevel statusLevel;
+    [SerializeField]
     private StatusPlayerName statusPlayerName;
+    [SerializeField]
     private StatusPlayerImage statusPlayerImage;
+    [SerializeField]
     private Command04Display command04Display;
 
     public static bool p1Select = false;
@@ -33,18 +42,6 @@ public class ManagerPlayerSelect : MonoBehaviour {
     public event PSelectEventHandler p2SelectEvent;
 
     public event PSelectEventHandler p3SelectEvent;
-
-    void Awake() {
-        statusPower = GameObject.Find("PowerValueText").GetComponent<StatusPower>();
-        statusDefence = GameObject.Find("DefenceValueText").GetComponent<StatusDefence>();
-        statusSpeed = GameObject.Find("SpeedValueText").GetComponent<StatusSpeed>();
-        statusHP = GameObject.Find("HPValueText").GetComponent<StatusHP>();
-        statusMP = GameObject.Find("MPValueText").GetComponent<StatusMP>();
-        statusLevel = GameObject.Find("LevelValueText").GetComponent<StatusLevel>();
-        statusPlayerName = GameObject.Find("PlayerNameText").GetComponent<StatusPlayerName>();
-        statusPlayerImage = GameObject.Find("PlayerImage").GetComponent<StatusPlayerImage>();
-        command04Display = GameObject.Find("BackGround04").GetComponent<Command04Display>();
-    }
 
     void Start() {
         p1SelectEvent += new PSelectEventHandler(statusPower.P1StatusPower);

@@ -7,6 +7,7 @@ public delegate void ChangePowerEventHandler(object sender, int i);
 
 public class ManagerStatusPower : MonoBehaviour {
 
+    [SerializeField]
     private StatusPower statusPower;
     [SerializeField]
     private int p1PowerChangeValue;
@@ -20,10 +21,6 @@ public class ManagerStatusPower : MonoBehaviour {
     private event ChangePowerEventHandler p2ChangePowerEvent;
 
     private event ChangePowerEventHandler p3ChangePowerEvent;
-
-    void Awake() {
-        statusPower = GameObject.Find("PowerValueText").GetComponent<StatusPower>();
-    }
 
     void Start() {
         p1ChangePowerEvent += new ChangePowerEventHandler(statusPower.P1StatusPowerChange);

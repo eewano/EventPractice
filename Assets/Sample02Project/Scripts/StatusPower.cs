@@ -5,6 +5,7 @@ using System;
 
 public class StatusPower : MonoBehaviour {
 
+    [SerializeField]
     private Text powerText;
     [SerializeField]
     private int p1Power;
@@ -18,7 +19,6 @@ public class StatusPower : MonoBehaviour {
     private bool p3PowerDisplay = false;
 
     void Start() {
-        powerText = GetComponent<Text>();
         powerText.text = "";
     }
 

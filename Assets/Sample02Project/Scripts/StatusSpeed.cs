@@ -5,6 +5,7 @@ using System;
 
 public class StatusSpeed : MonoBehaviour {
 
+    [SerializeField]
     private Text speedText;
     [SerializeField]
     private int p1Speed;
@@ -18,7 +19,6 @@ public class StatusSpeed : MonoBehaviour {
     private bool p3SpeedDisplay = false;
 
     void Start() {
-        speedText = GetComponent<Text>();
         speedText.text = "";
     }
 

@@ -9,7 +9,9 @@ public class RecoverHPMP : MonoBehaviour {
 
     [SerializeField]
     private GameObject buttonHPMPRecover;
+    [SerializeField]
     private StatusHP statusHP;
+    [SerializeField]
     private StatusMP statusMP;
 
     private event RecoveryEventHandler p1Recovery;
@@ -17,11 +19,6 @@ public class RecoverHPMP : MonoBehaviour {
     private event RecoveryEventHandler p2Recovery;
 
     private event RecoveryEventHandler p3Recovery;
-
-    void Awake() {
-        statusHP = GameObject.Find("HPValueText").GetComponent<StatusHP>();
-        statusMP = GameObject.Find("MPValueText").GetComponent<StatusMP>();
-    }
 
     void Start() {
         p1Recovery += new RecoveryEventHandler(statusHP.P1HPMPRecover);

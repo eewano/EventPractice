@@ -1,7 +1,5 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Networking;
-using System.Collections;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public delegate void DamageEventHandler(object sender, int i);
 
@@ -9,6 +7,7 @@ public class ManagerDamage : MonoBehaviour {
 
     [SerializeField]
     private GameObject buttonDamage;
+    [SerializeField]
     private StatusHP statusHP;
 
     public event DamageEventHandler p1DamageEvent;
@@ -16,10 +15,6 @@ public class ManagerDamage : MonoBehaviour {
     public event DamageEventHandler p2DamageEvent;
 
     public event DamageEventHandler p3DamageEvent;
-
-    void Awake() {
-        statusHP = GameObject.Find("HPValueText").GetComponent<StatusHP>();
-    }
 
     void Start() {
         p1DamageEvent += new DamageEventHandler(statusHP.P1StatusHPChange);

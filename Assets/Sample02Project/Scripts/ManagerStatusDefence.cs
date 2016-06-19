@@ -7,6 +7,7 @@ public delegate void ChangeDefenceEventHandler(object sender, int i);
 
 public class ManagerStatusDefence : MonoBehaviour {
 
+    [SerializeField]
     private StatusDefence statusDefence;
     [SerializeField]
     private int p1DefenceChangeValue;
@@ -20,10 +21,6 @@ public class ManagerStatusDefence : MonoBehaviour {
     private event ChangeDefenceEventHandler p2ChangeDefenceEvent;
 
     private event ChangeDefenceEventHandler p3ChangeDefenceEvent;
-
-    void Awake() {
-        statusDefence = GameObject.Find("DefenceValueText").GetComponent<StatusDefence>();
-    }
 
     void Start() {
         p1ChangeDefenceEvent += new ChangeDefenceEventHandler(statusDefence.P1StatusDefenceChange);
