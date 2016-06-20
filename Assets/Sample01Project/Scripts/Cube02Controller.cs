@@ -5,7 +5,7 @@ public class Cube02Controller : MonoBehaviour {
 
     private Renderer rend;
 
-    void Awake() {
+    void Start() {
         rend = GetComponent<Renderer>();
     }
 

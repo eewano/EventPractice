@@ -7,7 +7,9 @@ public delegate void EventHandler(object sender, EventArgs e);
 
 public class EventManager : MonoBehaviour {
 
+    [SerializeField]
     private Cube01Controller cube01Controller;
+    [SerializeField]
     private Cube02Controller cube02Controller;
 
     public event EventHandler changeSpeed;
@@ -21,10 +23,7 @@ public class EventManager : MonoBehaviour {
     private const string TagScaleChange = "ScaleChange";
     private const string TagColorChange = "ColorChange";
 
-    void Awake() {
-        cube01Controller = GameObject.Find("Cube01").GetComponent<Cube01Controller>();
-        cube02Controller = GameObject.Find("Cube02").GetComponent<Cube02Controller>();
-
+    void Start() {
         changeSpeed += new EventHandler(cube01Controller.ChangeScaleHandler);
         changeSpeed += new EventHandler(cube02Controller.ChangeScaleHandler);
         resetSpeed += new EventHandler(cube01Controller.ResetScaleHandler);

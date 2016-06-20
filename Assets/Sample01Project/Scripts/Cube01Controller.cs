@@ -11,7 +11,7 @@ public class Cube01Controller : MonoBehaviour {
     private float speed;
     private Renderer rend;
 
-    void Awake() {
+    void Start() {
         startPosition = transform.localPosition;
         rend = GetComponent<Renderer>();
     }
