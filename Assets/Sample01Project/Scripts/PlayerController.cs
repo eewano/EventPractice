@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour {
 
     void Update() {
         float translation = Input.GetAxis("Vertical") * forwardSpeed;
+        if (translation < 0)
+        {
+            translation *= 0.6f;
+        }
         float rotation = Input.GetAxis("Horizontal") * rotateSpeed;
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
